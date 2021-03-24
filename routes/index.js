@@ -47,7 +47,6 @@ router.post('/upload-files',upload.single('image'),function(req, res){
     console.log("route index called upload-files",req.files);
     console.log("route index called upload-files",req.files.image.name);
     let imageName = req.files.image.name;
-
     let uploadedFiles = new UploadedFiles({
                 name:imageName,
                 date:new Date()
@@ -58,7 +57,6 @@ router.post('/upload-files',upload.single('image'),function(req, res){
             }).catch((error)=>{
                 console.log("file",error);
             })
-            
     // res.render('pages/home');
 });
 
