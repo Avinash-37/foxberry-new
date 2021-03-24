@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>View All File And Search</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="mt-5"></div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% Allfiles.forEach(function(allfiles,index) { %>
+                                <tr>
+                                <th scope="row"><%= index %></th>
+                                <td><a href="/view-file?id=<%= allfiles._id %>" target="__blank"><%= allfiles.name %></a></td>
+                                <td><%= allfiles.date %></td>
+                              </tr>
+                        <% }); %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
